@@ -10,7 +10,7 @@ import {MusicplaylistService} from '../musicplaylist.service'
 })
 export class PlaylistsComponent implements OnInit {
   text="Top 50 English"
-  playlist:any=''
+  playlist:any=[]
   color:any=[]
   cplaylist: any;
   letters = '0123456789ABCDEF';
