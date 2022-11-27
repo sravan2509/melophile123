@@ -10,17 +10,17 @@ export class UsersService {
     constructor(private http:HttpClient) {}
 
     getUsers() {
-        return this.http.get('http://localhost:8000/users');
+        return this.http.get('https://melophile-app.herokuapp.com/users');
     }
     addUsers(firstName: string, lastName: string, email:  string, phoneNumber: string,)
     {
-        this.http.post('http://localhost:8000/users',{ firstName, lastName, email, phoneNumber})
+        this.http.post('https://melophile-app.herokuapp.com/users',{ firstName, lastName, email, phoneNumber})
         .subscribe((responseData) => {
             console.log(responseData);
-        }); 
+        });
     }
     deleteUser(userId: string) {
-        this.http.delete("http://localhost:8000/users/" + userId)
+        this.http.delete("https://melophile-app.herokuapp.com/users/" + userId)
             .subscribe(() => {
                 console.log('Deleted: ' + userId);
             });
@@ -28,29 +28,29 @@ export class UsersService {
     }
     updateUser(userId: string,firstName: string, lastName: string, email:  string, phoneNumber: string)
     {
-        this.http.put("http://localhost:8000/users/" + 
+        this.http.put("https://melophile-app.herokuapp.com/users/" +
         userId,{ firstName, lastName, email, phoneNumber })
         .subscribe(() => {
             console.log('Updated: ' + userId);
         });
     }
     getUser(userId: string) {
-        return this.http.get('http://localhost:8000/users/'+ userId);
+        return this.http.get('https://melophile-app.herokuapp.com/users/'+ userId);
       }
 
 
       getReviews() {
-        return this.http.get('http://localhost:8000/reviews');
+        return this.http.get('https://melophile-app.herokuapp.com/reviews');
     }
     addReviews(firstName: string, rate: string, review:  string)
     {
-        this.http.post('http://localhost:8000/reviews',{ firstName, rate, review})
+        this.http.post('https://melophile-app.herokuapp.com/reviews',{ firstName, rate, review})
         .subscribe((responseData) => {
             console.log(responseData);
-        }); 
+        });
     }
     deleteReview(reviewId: string) {
-        this.http.delete("http://localhost:8000/reviews/" + reviewId)
+        this.http.delete("https://melophile-app.herokuapp.com/reviews/" + reviewId)
             .subscribe(() => {
                 console.log('Deleted: ' + reviewId);
             });
@@ -58,32 +58,32 @@ export class UsersService {
     }
     updateReview(reviewId: string,firstName: string, rate: string, review: string)
     {
-        this.http.put("http://localhost:8000/reviews/" + 
+        this.http.put("https://melophile-app.herokuapp.com/reviews/" +
         reviewId,{ firstName, rate, review })
         .subscribe(() => {
             console.log('Updated: ' + reviewId);
         });
     }
     getReview(reviewId: string) {
-        return this.http.get('http://localhost:8000/reviews/'+ reviewId);
+        return this.http.get('https://melophile-app.herokuapp.com/reviews/'+ reviewId);
       }
 
 
       getSubscriptions() {
-        return this.http.get('http://localhost:8000/subscription');
+        return this.http.get('https://melophile-app.herokuapp.com/subscription');
     }
     addSubscription(subtype:string){
         console.log(subtype)
-        return this.http.post('http://localhost:8000/subscription',{subscribed:subtype})
+        return this.http.post('https://melophile-app.herokuapp.com/subscription',{subscribed:subtype})
 
     }
     deleteSubscription(collection:{}){
-        return this.http.post('http://localhost:8000/deleteSubscription',{query:collection})
+        return this.http.post('https://melophile-app.herokuapp.com/deleteSubscription',{query:collection})
     }
     updateSubscription(collection:{},value:string){
-        return this.http.post('http://localhost:8000/updateSubscription',{query:collection,subscribed:value})  
+        return this.http.post('https://melophile-app.herokuapp.com/updateSubscription',{query:collection,subscribed:value})
     }
 
-      
-             
+
+
 }

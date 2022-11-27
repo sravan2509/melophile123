@@ -12,19 +12,19 @@ export class MusicplaylistService {
  constructor(private http:HttpClient) {}
 
     getPlaylist() {
-        return this.http.get('http://localhost:8000/playlist/getallmusic');
+        return this.http.get('https://melophile-app.herokuapp.com/playlist/getallmusic');
     }
     addSongTOplaylist(data:any){
-       return this.http.post('http://localhost:8000/playlist/create',data);
+       return this.http.post('https://melophile-app.herokuapp.com/playlist/create',data);
     }
     updateSongToPlaylist(id:any,data:any){
-      return this.http.put('http://localhost:8000/playlist/update/'+id,data);
+      return this.http.put('https://melophile-app.herokuapp.com/playlist/update/'+id,data);
     }
     deleteSongDB(id:any){
-      return this.http.delete('http://localhost:8000/playlist/delete/'+id);
+      return this.http.delete('https://melophile-app.herokuapp.com/playlist/delete/'+id);
     }
     createSongDB(data:any){
-      return this.http.post('http://localhost:8000/playlist/create',data);
+      return this.http.post('https://melophile-app.herokuapp.com/playlist/create',data);
     }
 
 
