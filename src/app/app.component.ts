@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'IT6203';
+  title = 'Project';
   condition = false;
   display_profile_block = 'display: block;';
 
