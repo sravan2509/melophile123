@@ -12,19 +12,19 @@ export class MusicplaylistService {
  constructor(private http:HttpClient) {}
 
     getPlaylist() {
-        return this.http.get('/api/playlist/getallmusic');
+        return this.http.get('http://18.223.29.55:8000/playlist/getallmusic');
     }
     addSongTOplaylist(data:any){
-       return this.http.post('/api/playlist/create',data);
+       return this.http.post('http://18.223.29.55:8000/playlist/create',data);
     }
     updateSongToPlaylist(id:any,data:any){
-      return this.http.put('/api/playlist/update/'+id,data);
+      return this.http.put('http://18.223.29.55:8000/playlist/update/'+id,data);
     }
     deleteSongDB(id:any){
-      return this.http.delete('/api/playlist/delete/'+id);
+      return this.http.delete('http://18.223.29.55:8000/playlist/delete/'+id);
     }
     createSongDB(data:any){
-      return this.http.post('/api/playlist/create',data);
+      return this.http.post('http://18.223.29.55:8000/playlist/create',data);
     }
 
 
