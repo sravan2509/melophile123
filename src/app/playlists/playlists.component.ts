@@ -114,7 +114,8 @@ export class PlaylistsComponent implements OnInit {
     }
   }
   AddSongToPlaylist(id:any){
-    this.text="Adding to "+this.newplaylist;
+    this.newplaylist = this.text
+    this.text="Adding to "+this.text;
     this.cplaylist[id].playlist_title.push(this.newplaylist)
     var data={
       Song_Url: this.cplaylist[id].Song_Url,
@@ -151,7 +152,6 @@ export class PlaylistsComponent implements OnInit {
      for(let i=0;i<this.cplaylist.length;i++){
       await this.deleteSongFromPlaylist(i)
     }
-    window.location.reload()
   }
 
   deleteSongFromDB(id:any){
@@ -182,6 +182,11 @@ export class PlaylistsComponent implements OnInit {
     this._playlistService.createSongDB(data).
     subscribe((res)=>{
       console.log(res)
+      this.upload=false;
+      this.Song_Title='';
+      this.Song_URL='';
+      this.Albam_Title='';
+      this.Playlist_name=''
     },(Error)=>{
       console.log(Error);
     })
